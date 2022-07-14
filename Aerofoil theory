@@ -1,0 +1,160 @@
+\documentclass[pdf]{beamer}
+\mode<presentation>{}
+\usetheme{Warsaw}
+
+
+\title{Flow Around an Aerofoil}
+\author{Himanshu Raj}
+\institute{Environmental Science and Engineering Dept. \\Indian Institute of Technology Bombay, Mumbai}
+\date{}
+
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\begin{center}
+ \includegraphics[scale=0.8]{aerofoil.pdf}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{exampleblock}{Flow Around an Aerofoil}
+The flow around an aerofoil is equivalent to the superposition of a Uniform Flow at $\infty$ $(U_\infty)$ $+$ a continuous distribution of a clockwise free vortex on the camber line of \textbf{Circulation Density} $\gamma(s)$ per unit length.
+\end{exampleblock}
+The circulation density  $\gamma(s)$ is such that it forces the resultant flow to be tangent to the camber line at every point.\\
+
+\end{frame}
+
+\begin{frame}
+\begin{center}
+ \includegraphics[scale=0.8]{thin_aerofoilTheory.pdf}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+Consider the slope of the camber line to be small.\\
+So,  \\
+\begin{equation*}
+\begin{split}
+\therefore \gamma(s)ds&=\gamma(\zeta)d\zeta \\
+\Gamma&=\int_{0}^{c} \gamma(\zeta)d\zeta    \\
+d\Gamma&= \gamma(\zeta)d\zeta                      \\
+\end{split}
+\end{equation*}
+$d\Gamma$ generates a velocity $dv$ at point P. But since, the aerofoil is thin and slope is small we can practically assusme that the velocity at $P\prime$ is same as $P$.
+\end{frame}
+
+
+\begin{frame}
+\begin{equation*}
+\begin{split}
+dv&=\frac{d\Gamma}{2\pi r}\\
+   &=\frac{d\Gamma}{2\pi (\zeta-x)}\\
+   &=\frac{\gamma(\zeta)d\zeta}{2\pi(\zeta-x)}\\
+\end{split}
+\end{equation*}
+Upon Integrating over the chord c, we get\textemdash\\
+\begin{equation*}
+\begin{split}
+V&=\int_{0}^{c}\frac{\gamma(\zeta)d\zeta}{2\pi(\zeta-x)}d\zeta\\
+\end{split}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+Slope of the camber line at any point is given by\textemdash
+\begin{equation*}
+\begin{split}
+\frac{dy}{dx}&\approx \alpha+\frac{v}{U_\infty}cos\alpha\\
+\frac{dy}{dx}&\approx \alpha+\frac{1}{2\pi U_\infty}\int_{0}^{c}\frac{\gamma(\zeta)d\zeta}{2\pi(\zeta-x)}d\zeta
+\end{split}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+The equation of the camber line of a given aerofoil is known to us and so its slope. So,in a more rhetoric way,we can say that, corresponding to any $\alpha$ we get at least one $\gamma$ or $\Gamma$.\\
+But, intuitively, there must be a unique $\Gamma$ for a given angle of attack. Otherwise, we can imagine ourselves flying past Florida!
+Hence, for a given angle of attack, $\exists$ infinite number of valid theoritical solutions, corresponding to infinite choices of $\Gamma$.\\
+\end{frame}
+
+\begin{frame}
+Nature knows how to pick up a solution over an infinite set of different potential flow solutions.\\
+Only that particular solution is allowed for which the flow is smoothly leaving the top and bottom surfaces of the aerofoil at the trailing edge. This is known as $Kutta$ $Condition$.
+\end{frame}
+
+
+\begin{frame}
+\begin{exampleblock}{Kutta-Condition}For a given aerofoil at a given angle of attack, the value of $\Gamma$ around the aerofoil is such that the flow leaves the trailing edge smoothly.
+\end{exampleblock}
+Note- Kutta condition is a consequence of viscosity.\\
+How?\\
+If there is no viscosity, then there will be no circulation (Kutta-Condition) and there will be no lift.\\
+Hence, there is viscous friction, no matter how small. There will be a no-slip condition at the aerofoil surface.\\
+Kutta-condition is a occurs at steady state.
+\end{frame}
+
+\begin{frame}{Kelvin's Theorem and Starting vortex}
+\begin{theorem}{\textbf{Kelvin's Circulation Theorem}}
+For an irrotational flow whose density is either constant or a function of pressure, as we follow a given closed circuit , the circulation does not change.
+\end{theorem}
+\textit{Proof}\\
+\begin{equation*}
+\begin{split}
+ \Gamma&=\oint \vec{V}.d\vec{r}\\
+\frac{D\Gamma}{Dt}&=\frac{D}{Dt}(\oint \vec{V}.d\vec{r})\\
+&=\oint(\frac{D\vec{V}}{Dt}.dr+\vec{V}.\frac{Dd\vec{r}}{Dt})\\
+\end{split}
+\end{equation*}
+As $\frac{D\vec{V}}{Dt}$ can be written as \textemdash 
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\begin{equation*}
+\begin{split}
+\frac{D\vec{V}}{Dt}&=\frac{-\nabla P}{\rho}+\vec{b}
+\end{split}
+\end{equation*}
+The above eq. is \textbf{Euler Equation for inviscid flow} and it can be derived from \textit{The Navier-Stokes Eq.}\\
+So, we have\textemdash
+\begin{equation*}
+\begin{split}
+\frac{D{\Gamma}}{Dt}&= \oint(\frac{-\nabla P}{\rho}+\vec{g}).d\vec{r}
+\end{split}
+\end{equation*}
+The terms inside the parentheses is an exact differential. As we know that line integral of a gradient is zero over a closed loop.
+\\
+So, we get \textemdash
+\\
+\begin{equation*}
+\begin{split}
+\frac{D{\Gamma}}{Dt}&= 0.
+\end{split}
+\end{equation*}
+Hence, $\Gamma$ is constant all over the flow.Proved.
+\end{frame}
+
+
+\begin{frame}{Crux of the spiel}
+As the fluid begin to move from rest, a starting vortex is formed near to the trailing edge. It is a vortex sheet. With time, this vortex sheet sheds away from the trailing edge and moves with the flow with its circulation decreasing. \\
+Now, to be consistent with the Kelvin's Theorem, a \textit{Bound Vortex} developes around the aerofoil. \\
+Its circulation increases with time until it comes to a steady state.\\
+In steady state, the starting vortex vanishes and the bound vortex gains a strength of $\gamma$. \\
+Kutta-condition is finally achieved.
+At all the times, the sum of the circulation of both, viz., \textbf{Bound Vortex} and the \textbf{Starting Vortex} is zero. [\textbf{Kelvin's Theorem}.]
+\end{frame}
+
+\begin{frame}
+
+\includegraphics[scale=0.6]{vortex around an aerofoil.pdf}
+
+\end{frame}
+
+\end{document}
